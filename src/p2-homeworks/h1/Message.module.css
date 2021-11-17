@@ -1,0 +1,80 @@
+.message {
+    width: 600px;
+    height: 200px;
+    background-color: greenyellow;
+    display: flex;
+}
+
+.info {
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+    height: 160px;
+    width: 440px;
+    float: right;
+    background-color: #282c34;
+
+}
+.info:before {
+    position:absolute;
+    content:"";
+    top: 206px;
+    left: 76px;
+    width:30px;
+    height:30px;
+    background: #282c34;
+    border-radius: 15px 15px 15px 15px;
+
+}
+
+.message:after {
+    position:absolute;
+    content:"";
+    top: 206px;
+    left: 66px;
+    width:20px;
+    height:20px;
+    background: greenyellow;
+    border-radius: 15px 0px 10px 15px;
+
+}
+
+.name_text {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.ava {
+    float: left;
+    align-self: flex-end;
+}
+
+.ava img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius: 100%;
+    border: 3px solid black;
+}
+
+.nam {
+    color: #7a67a3;
+}
+
+.text {
+    color: #c1c175;
+    float: left;
+
+}
+
+.time {
+    height: 20px;
+    color: white;
+    opacity: 0.3;
+    align-self: self-end;
+    margin-left: 150px;
+    margin-bottom: 15px;
+
+}
