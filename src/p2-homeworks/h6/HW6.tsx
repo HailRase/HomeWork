@@ -8,14 +8,14 @@ function HW6() {
 
     const save = () => {
         saveState<string>('editable-span-value', value)
+        alert(`Text ${value} was saved!`)
     }
     const restore = () => {
-        //let text = restoreState(value)
-        setValue(value)
+        setValue(restoreState<string>('editable-span-value', ''))
     }
 
     return (
-        <div>
+        <div style={{backgroundColor: "gray"}}>
             <hr/>
             homeworks 6
 

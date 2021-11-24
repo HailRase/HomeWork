@@ -1,0 +1,8 @@
+.spanStyle {
+    display: inline-block;
+    height: 31px;
+    padding-top: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #d0c5b5;
+}
