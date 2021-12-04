@@ -2,7 +2,7 @@ import React from 'react'
 import st from './Message.module.css'
 
 type MessageType = {
-    avatar: string;
+    avatar: string
     name: string
     message: string
     time: string

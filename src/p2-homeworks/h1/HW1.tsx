@@ -6,6 +6,7 @@ const messageData = {
     name: 'Жёлтый Бублик',
     message: 'Hi my friends, im so yummy!!!',
     time: '22:00',
+    color: 'red'
 }
 
 function HW1() {
@@ -16,12 +17,8 @@ function HW1() {
 
             should work (должно работать)
 
-            <Message
-                avatar={messageData.avatar}
-                name={messageData.name}
-                message={messageData.message}
-                time={messageData.time}
-            />
+            <Message avatar={messageData.avatar} name={messageData.name} message={messageData.message}
+                     time={messageData.time}/>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
