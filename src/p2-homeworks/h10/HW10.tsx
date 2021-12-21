@@ -10,13 +10,10 @@ function HW10() {
     const dispatch = useDispatch()
 
     const setLoading = () => {
-        setTimeout(()=> {
-            dispatch(loadingAC(!loading.isLoading))
-            console.log('loading...')
-        }, 1000)
-        setTimeout(()=> {
-            dispatch(loadingAC(loading.isLoading))
-        }, 3000)
+        dispatch(loadingAC(true))
+        setTimeout(() => {
+            dispatch(loadingAC(false))
+        }, 4000)
     };
 
     return (
@@ -27,7 +24,7 @@ function HW10() {
             {/*should work (должно работать)*/}
             {loading.isLoading
                 ? (
-                    <div>крутилка...</div>
+                    <div><img style={{height: "100px", width: "100px"}} src="https://i.gifer.com/2unv.gif" alt=""/></div>
                 ) : (
                     <div>
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>
