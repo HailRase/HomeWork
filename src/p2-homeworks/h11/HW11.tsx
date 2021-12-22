@@ -1,30 +1,54 @@
-import React, {useState} from 'react'
+import {Slider} from '@material-ui/core'
+import React, {ChangeEvent, useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import {isNumber} from "util";
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+    let [value1, setValue1] = useState(0)
+    const [value2, setValue2] = useState<number | number[]>([0, 10])
+
+    const onChangeRangeHandler = (e: any, value: number | number[]) => {
+        setValue2(value)
+        if (Array.isArray(value)) {
+            setValue1(value[0])
+        }
+    }
+    const onChangeSuperRangeValue = (value: number) => {
+        setValue1(value)
+        if (Array.isArray(value2)) {
+            setValue2([value2[0] = value,value2[1]] )
+        }
+    }
 
     return (
         <div>
             <hr/>
             homeworks 11
 
+
             {/*should work (должно работать)*/}
-            <div>
-                <span>{value1}</span>
+            <div style={{display: "flex", justifyContent: "flex-start"}}>
+                <div style={{width: "15px", marginRight: "5px"}}>
+                    <span>{value1}</span>
+                </div>
                 <SuperRange
-                    // сделать так чтоб value1 изменялось
+                    value={value1}
+                    onChangeRange={onChangeSuperRangeValue}
                 />
             </div>
 
-            <div>
-                <span>{value1}</span>
+            <div style={{display: "flex", justifyContent: "flex-start"}}>
+                <div style={{width: "15px", marginRight: "10px"}}>
+                    <span>{value1}</span>
+                </div>
                 <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
+                    value={value2}
+                    onChangeRange={onChangeRangeHandler}
                 />
-                <span>{value2}</span>
+                <div style={{width: "15px", marginLeft: "10px"}}>
+                    <span>{Array.isArray(value2) ? value2[1] : ''}</span>
+                </div>
             </div>
 
             <hr/>
