@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import s from "./HW12.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
@@ -14,7 +14,7 @@ function HW12() {
             dispatch(changeThemeC(themes[themes.findIndex(t => t === option)]))
     }
     return (
-        <div style={{height: "100vh"}} className={s[theme]}>
+        <div className={s[theme]}>
             <hr/>
             <span className={s[theme + '-text']}>
                 homeworks 12
