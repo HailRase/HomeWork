@@ -3,12 +3,19 @@ import {RequestAPI} from "../api/RequestAPI";
 
 const Request = () => {
 
-    const [checked, setChecked] = useState<boolean>(true)
+    const [checked, setChecked] = useState<boolean>(false)
 
     const requestOnClickHandler = () => {
         RequestAPI.postRequest(checked)
-        console.log(checked)
-    }
+            .then(response => {
+                console.log(response.data)
+                return response.data
+            })
+            .catch(error => {
+                console.log({...error})
+                console.log()
+            })
+        }
 
     const onCheckedChange = () => setChecked(!checked)
 

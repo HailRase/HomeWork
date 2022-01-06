@@ -1,12 +1,15 @@
 import * as axios from "axios";
 
+
+type RequestAPIPostType = {
+
+}
+
 export const RequestAPI = {
     postRequest(success: boolean){
-        axios.default.post('https://neko-cafe-back.herokuapp.com/auth/test', {success: success})
+        return axios.default.post('https://neko-cafe-back.herokuapp.com/auth/test', {success: success})
             .then(response => {
-                console.log(response)
-            }).catch(error => {
-                console.log( {...error} );
-                console.log( error.response ? error.response.data.errorText : error.response.data.info )})
+                return response
+            })
     }
 }
