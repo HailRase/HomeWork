@@ -1,4 +1,4 @@
-import * as axios from "axios";
+import  axios from "axios";
 
 
 type RequestAPIPostType = {
@@ -7,7 +7,7 @@ type RequestAPIPostType = {
 
 export const RequestAPI = {
     postRequest(success: boolean){
-        return axios.default.post('https://neko-cafe-back.herokuapp.com/auth/test', {success: success})
+        return axios.post('https://neko-cafe-back.herokuapp.com/auth/test', {success})
             .then(response => {
                 return response
             })
